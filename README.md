@@ -15,7 +15,10 @@ decorating the GUI with matte borders to show the 3x3 grids within, and a sudoku
 
 The user can start entering text input in the empty cells. At any point, the user can hit enter. If the user has a value in 
 a cell that is incorrect with the raw solution saved by the program, then they are prompted with a message that says what
-cell has the incorrect value. If the user has text in the cells, but the values are right, the program tells the user
+cell has the incorrect value. 
+![Image description](https://github.com/thunderd568/Sudoku/blob/master/invalidEntry.jpg)
+
+If the user has text in the cells, but the values are right, the program tells the user
 everything appears correct so far, however when it encounters a cell that doesn't have any text in it, it encourages the user
 to keep going.
 
