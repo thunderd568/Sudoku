@@ -3,7 +3,7 @@
 I am a lifelong fan of the puzzle game Sudoku. Although there are many online web applications where you can play the game,
 I wanted to take on the task of making my own Java Application with a Sudoku GUI that uses Java Swing.
 
-![Image description](link-to-image)
+![Image description](https://github.com/thunderd568/Sudoku/blob/master/Screen%20Shot%202019-06-05%20at%204.19.04%20PM.jpg)
 
 # How It Works
 
