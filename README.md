@@ -3,6 +3,8 @@
 I am a lifelong fan of the puzzle game Sudoku. Although there are many online web applications where you can play the game,
 I wanted to take on the task of making my own Java Application with a Sudoku GUI that uses Java Swing.
 
+![Image description](link-to-image)
+
 # How It Works
 
 The user starts the program and then sees a 9x9 grid show up on the screen with 35 empty cells and the rest filled in.
