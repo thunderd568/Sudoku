@@ -27,5 +27,5 @@ The program will not let the user add any input that is not numeric and no more 
 # Difficulty of the puzzle
 
 At the moment, the difficulty is only accessible through the source code and will only show 35 cells to be filled in. 
-It is with hope in the future, the program will randomize difficulty. It is also an option to add a way to have the user
-determine the level of difficulty. 
+It is with hope in the future, the program will randomize difficulty. It is also being considered to add an option where 
+the user can specify the level of difficulty (i.e. Hard, Medium, Easy).
