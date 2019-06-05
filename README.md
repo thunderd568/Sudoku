@@ -18,12 +18,14 @@ a cell that is incorrect with the raw solution saved by the program, then they a
 cell has the incorrect value. 
 ![Image description](https://github.com/thunderd568/Sudoku/blob/master/invalidEntry.jpg)
 
-If the user has text in the cells, but the values are right, the program tells the user
-everything appears correct so far, however when it encounters a cell that doesn't have any text in it, it encourages the user
-to keep going.
+If the user has text in one or mor cells but they still have blank ones, the user can hit enter and the program will check
+to see if the entries entered so far are correct and encourage the user to finish the game.
+![Image description](https://github.com/thunderd568/Sudoku/blob/master/keepGoing.jpg)
 
 The program will not let the user add any input that is not numeric and no more than 1 digit. 
 
 # Difficulty of the puzzle
 
-At the moment, the difficulty is only accessible through the source code and will only show 35 cells to be filled in. It is with hope in the future, the program will randomize difficulty. It is also an option to add a way to have the user determine the level of difficulty. 
+At the moment, the difficulty is only accessible through the source code and will only show 35 cells to be filled in. 
+It is with hope in the future, the program will randomize difficulty. It is also an option to add a way to have the user
+determine the level of difficulty. 
