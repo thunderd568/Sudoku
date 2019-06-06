@@ -26,7 +26,7 @@ to see if the entries entered so far are correct and then encourage the user to 
 The program will not let the user add any input that is not numeric and no more than 1 digit. 
 
 Once the sudoku board is complete and determined to be correct, the program prompts the user they have won and terminates.
-![Image description]()
+![Image description](https://github.com/thunderd568/Sudoku/blob/master/correct.jpg)
 
 # Difficulty of the puzzle
 
