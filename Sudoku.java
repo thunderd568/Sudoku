@@ -8,6 +8,7 @@ import javax.swing.text.AbstractDocument;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DocumentFilter;
+import java.util.concurrent.ThreadLocalRandom;
 
 
 public class Sudoku extends JFrame {
@@ -45,24 +46,31 @@ public class Sudoku extends JFrame {
     // The board with the 0's
 
     // The original puzzle with all numbers
-    private int[][] board = generator.nextBoard();
+    private int[][] board;
     // The raw solution. Because of referencing, need to save this as a copy for checking later.
-    private int[][] rawSolution = saveSolution(board);
+    private int[][] rawSolution;
 
     // The board with the 0's to decide what values are going ot be hidden.
-    public int[][] puzzle = generator.getBoard(35);
+    public int[][] puzzle;
 
     // Puzzle should have 0's for any 0 make it invisible.
-    public boolean[][] masks = makeMasks(puzzle);
+    public boolean[][] masks;
+
+    public static final String[] OPTIONS = {"Easy", "Medium", "Hard"};
 
 
     /**
      * Constructor to setup the game and the UI Components
      */
-    public Sudoku() {
+    public Sudoku(int difficulty) {
         Container cp = getContentPane();
         cp.setLayout(new GridLayout(GRID_SIZE, GRID_SIZE));  // 9x9 GridLayout
 
+
+        board = generator.nextBoard();
+        rawSolution = saveSolution(board);
+        puzzle = generator.getBoard(difficulty);
+        masks = makeMasks(puzzle);
 
         // Construct 9x9 JTextFields and add to the content-pane
         for (int row = 0; row < GRID_SIZE; ++row) {
@@ -105,7 +113,7 @@ public class Sudoku extends JFrame {
                             JOptionPane.showMessageDialog(getContentPane(), msg);
                             return;
                         } else if (!finished) {
-                            JOptionPane.showMessageDialog(getContentPane(), "So far so good!\nKeep going!");
+                            JOptionPane.showMessageDialog(cp, "So far so good!\nKeep going!");
                             return;
                         }
 
@@ -305,9 +313,46 @@ public class Sudoku extends JFrame {
         return solution;
     }
 
+    public static int promptDifficultyMessage(Container cp, String[] options) {
+        int difficulty = JOptionPane.showOptionDialog(cp,
+                "Welcome to my Sudoku game.\nPlease select a level of difficulty.\n",
+                "Sudoku - Pick a Difficulty",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,
+                null,
+                options,
+                options[0]);
+
+        return difficulty;
+    }
+
+    public static int generateDifficulty(int option) {
+
+        switch(option) {
+            case 0:
+                // Easy difficulty
+                return ThreadLocalRandom.current().nextInt(31, 36);
+            case 1:
+                // Medium option
+                return ThreadLocalRandom.current().nextInt(36,41);
+            case 2:
+                // Hard option
+                return ThreadLocalRandom.current().nextInt(41,46);
+            default:
+                return -1;
+        }
+
+    }
+
 
     public static void main(String args[]) {
-        Sudoku game = new Sudoku();
+        int option = promptDifficultyMessage(null, OPTIONS);
+
+        int difficulty = generateDifficulty(option);
+        System.out.println("Option chosen was " + OPTIONS[option]);
+        System.out.println(difficulty + " blank squares will be made.");
+
+        Sudoku game = new Sudoku(difficulty);
         game.setVisible(true);
 
         // Print out the solution in console for testing and visual reasons.
