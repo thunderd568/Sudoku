@@ -7,7 +7,10 @@ I wanted to take on the task of making my own Java Application with a Sudoku GUI
 
 # How It Works
 
-The user starts the program and sees a 9x9 grid show up on the screen with 35 empty cells and the rest filled in.
+The user starts the program and sees a message asking what level of difficulty they would like the puzzle to be. 
+![Image description](https://github.com/thunderd568/Sudoku/blob/master/firstMessage.jpg)
+
+More on that is described below.
 I had to find a program to produce a valid sudoku board and I managed to come across a decent one. Credit is fully given 
 to the author in the source code of the PuzzleGenerator.java file. I also needed a base to start making the GUI. Some of that
 code was borrowed from an outside source as well and once again credit was given. My modifications include adding the event
@@ -30,7 +33,10 @@ Once the sudoku board is complete and determined to be correct, the program prom
 
 # Difficulty of the puzzle
 
-At the moment, the difficulty is only accessible through the source code and will only show 35 cells to be filled in. 
-It is with hope in the future, the program will randomize difficulty. It is also being considered to add an option where 
-the user can specify the level of difficulty (i.e. Hard, Medium, Easy) at the start of the game through a Dialog option
-message.
+When the user selects the difficulty, the following criteria is applied for each decision
+#Easy
+A random number between 31-35 is generated. This number is the number of blank squares in the grid.
+#Medium
+A random number between 36-40 is generated to determine how many blank squares will be in the grid.
+#Hard
+Same as above however the random number is between 41-45. All numbers in the aformentioned ranges are inclusives on both bounds.
